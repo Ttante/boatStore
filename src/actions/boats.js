@@ -1,6 +1,6 @@
-export const updateBoatPrice = () => dispatch => {
+export const updateMainBoatPrice = (newPrice) => dispatch => {
     dispatch({
-        type: 'UPDATE_BOAT_PRICE',
-        payload: 'updated boat price!'
+        type: 'UPDATE_MAINBOAT_PRICE',
+        payload: newPrice
     })
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { updateBoatPrice } from './actions/boats'
+import { updateMainBoatPrice } from './actions/boats'
 
 import logo from './logo.svg';
 import './App.css';
@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
   render() {
     const buttonClickFunction = (e) => {
-      this.props.updateBoatPrice()
+      this.props.updateMainBoatPrice('1500')
     }
 
     return (
@@ -21,7 +21,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={buttonClickFunction}>test updateBoatPrice()</button>
+        <button onClick={buttonClickFunction}>test updateMainBoatPrice()</button>
         <p>this.props: </p>
         <div>
           { JSON.stringify(this.props) }
@@ -36,7 +36,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  updateBoatPrice: () => dispatch(updateBoatPrice())
+  updateMainBoatPrice: (newPrice) => dispatch(updateMainBoatPrice(newPrice))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
